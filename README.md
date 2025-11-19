@@ -1,14 +1,57 @@
-# Welcome to your CDK TypeScript project
+## プロジェクト名
 
-This is a blank project for CDK development with TypeScript.
+Hono + AWS Lambda（Lambdalith 構成）による SNS ダミーサイト
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## 概要
 
-## Useful commands
+Hono フレームワークと AWS Lambda（Lambdalith 構成）を用いて、SNS のダミーサイトを構築するプロジェクトです。
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+## 技術スタック
+
+- TypeScript
+- Hono（Web フレームワーク）
+- AWS Lambda（Lambdalith 構成）
+- AWS CDK（インフラ管理）
+
+## セットアップ
+
+1. リポジトリをクローン
+   ```bash
+   git clone https://github.com/akihiko-ima/hono-clone-sns.git
+   cd hono-clone-sns
+   ```
+2. 依存パッケージをインストール
+   ```bash
+   npm install
+   ```
+
+## ローカル開発
+
+`lambda/local.ts` を利用してローカルサーバーを起動できます。
+
+```bash
+npm run dev
+```
+
+## デプロイ方法
+
+AWS CDK を利用してデプロイします。
+
+```bash
+npx cdk deploy
+```
+
+## ディレクトリ構成
+
+- `lambda/` : Lambda 関数のエントリポイント
+- `lib/` : CDK スタック定義
+- `bin/` : CDK アプリケーションエントリ
+- `test/` : テストコード
+
+## ライセンス
+
+MIT
+
+## 著者
+
+akihiko-ima
