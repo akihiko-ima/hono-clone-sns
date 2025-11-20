@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { exists, eq, desc } from "drizzle-orm";
+import { eq, desc } from "drizzle-orm";
 
 import { AuthContext } from "../types";
 import { jwtAuth } from "../middlewares/jwtAuth";
