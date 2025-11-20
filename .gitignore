@@ -7,8 +7,8 @@ node_modules
 .cdk.staging
 cdk.out
 
-/lib/generated/prisma
-
+# drizzle migrationfile
+drizzle/*
 
 # variable
 .env*

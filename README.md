@@ -10,6 +10,7 @@ Hono フレームワークと AWS Lambda（Lambdalith 構成）を用いて、SN
 
 - TypeScript
 - Hono（Web フレームワーク）
+- drizzle (ORM)
 - AWS Lambda（Lambdalith 構成）
 - AWS CDK（インフラ管理）
 
@@ -47,6 +48,32 @@ npx cdk deploy
 - `lib/` : CDK スタック定義
 - `bin/` : CDK アプリケーションエントリ
 - `test/` : テストコード
+
+## DB 関係コマンド
+
+- Migration ファイルの作成
+
+```bash
+npx drizzle-kit generate
+```
+
+- migrage 実行
+
+```bash
+npx drizzle-kit migrate
+```
+
+- migration ファイルの削除(データベースには反映されない)
+
+```bash
+npx drizzle-kit drop
+```
+
+- drizzle studio
+
+```bash
+npx drizzle-kit studio
+```
 
 ## ライセンス
 
