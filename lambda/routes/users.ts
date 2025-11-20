@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 
-const users = new Hono();
+const usersRouter = new Hono();
 
-users.get("/", (c) => c.text("this is users endpoint"));
+usersRouter.get("/", (c) => c.text("this is users endpoint"));
 
-export default users;
+export default usersRouter;

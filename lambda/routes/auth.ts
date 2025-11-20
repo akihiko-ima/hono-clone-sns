@@ -7,7 +7,7 @@ import { db } from "../db";
 import { users, profiles } from "../db/schema";
 import generateIdenticon from "../utils/generateIdenticon";
 
-const auth = new Hono();
+const authRouter = new Hono();
 
 export const checkEmailExists = async (email: string) => {
   const subQuery = db.select().from(users).where(eq(users.email, email));
@@ -23,7 +23,7 @@ export const checkEmailExists = async (email: string) => {
 /*
 / ユーザー登録
 */
-auth.post("/register", async (c) => {
+authRouter.post("/register", async (c) => {
   const { username, email, password } = await c.req.json();
 
   if (!username || !email || !password) {
@@ -82,7 +82,7 @@ auth.post("/register", async (c) => {
 /*
 / ログイン
 */
-auth.post("/login", async (c) => {
+authRouter.post("/login", async (c) => {
   const { email, password } = await c.req.json();
 
   if (!email || !password) {
@@ -117,4 +117,4 @@ auth.post("/login", async (c) => {
   return c.json({ token });
 });
 
-export default auth;
+export default authRouter;

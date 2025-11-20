@@ -1,13 +1,13 @@
 import { Hono } from "hono";
 
-import auth from "./routes/auth";
-import posts from "./routes/posts";
-import users from "./routes/users";
+import authRouter from "./routes/auth";
+import postsRouter from "./routes/posts";
+import usersRouter from "./routes/users";
 
 const app = new Hono();
 
-app.route("/api/auth", auth);
-app.route("/api/posts", posts);
-app.route("/api/users", users);
+app.route("/api/auth", authRouter);
+app.route("/api/posts", postsRouter);
+app.route("/api/users", usersRouter);
 
 export default app;
