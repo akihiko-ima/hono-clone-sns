@@ -11,6 +11,12 @@ const pool = new Pool({
 export const db = drizzle(pool, { schema });
 
 // migration 実行
-(async () => {
-  await migrate(db, { migrationsFolder: "./drizzle" });
-})();
+if (process.env.NODE_ENV !== "production") {
+  (async () => {
+    console.log("Running Drizzle migration...");
+    await migrate(db, { migrationsFolder: "./drizzle" });
+    console.log("Migration finished.");
+  })().catch((err) => {
+    console.error("Migration error:", err);
+  });
+}

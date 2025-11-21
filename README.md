@@ -39,7 +39,13 @@ npm run dev
 AWS CDK を利用してデプロイします。
 
 ```bash
-npx cdk deploy
+cdk deploy
+```
+
+- すべて削除するコマンド
+
+```bash
+cdk destroy
 ```
 
 ## ディレクトリ構成
