@@ -2,7 +2,7 @@ import { Context, Next } from "hono";
 import jwt from "jsonwebtoken";
 
 export const jwtAuth = async (c: Context, next: Next) => {
-  const authHeader = c.req.header("Authorization");
+  const authHeader = c.req.header("X-JWT-Authorization");
   if (!authHeader) {
     return c.json({ error: "No token provided" }, 401);
   }
