@@ -6,6 +6,8 @@ Hono + AWS Lambda（Lambdalith 構成）による SNS ダミーサイト
 
 Hono フレームワークと AWS Lambda（Lambdalith 構成）を用いて、SNS のダミーサイトを構築するプロジェクトです。
 
+- client 側のサンプルコードは`misc/client.ts`に格納しています。`@aws-sdk/signature-v4`を採用しているため、本番環境では`SSR`などのサーバーサイドでの実行が必要です。
+
 ## 技術スタック
 
 - TypeScript

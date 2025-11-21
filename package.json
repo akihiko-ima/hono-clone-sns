@@ -6,12 +6,15 @@
   },
   "scripts": {
     "dev": "tsx watch lambda/local.ts",
+    "client": "tsx watch misc/client.ts",
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk"
   },
   "devDependencies": {
+    "@aws-crypto/sha256-js": "^5.2.0",
+    "@aws-sdk/signature-v4": "^3.370.0",
     "@hono/node-server": "^1.19.6",
     "@types/jest": "^29.5.14",
     "@types/node": "^24.10.1",
@@ -20,6 +23,7 @@
     "drizzle-kit": "^0.31.7",
     "esbuild": "^0.27.0",
     "jest": "^29.7.0",
+    "node-fetch": "^3.3.2",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.6",
